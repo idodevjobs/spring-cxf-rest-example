@@ -1,7 +1,7 @@
 package com.idodevjobs.sample.model;
 
 public class ExampleModel {
-    private String string;
+    private String string ="";
     private int anInt;
 
     public ExampleModel() {}

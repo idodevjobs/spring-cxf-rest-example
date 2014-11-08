@@ -24,6 +24,9 @@
         </jaxrs:features>
         <jaxrs:providers>
             <bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+            <bean class="com.idodevjobs.sample.exception.mapper.ClientExceptionMapper" />
+            <bean class="com.idodevjobs.sample.exception.mapper.ServerExceptionMapper" />
+            <bean class="com.idodevjobs.sample.exception.mapper.ThrowableMapper" />
         </jaxrs:providers>
     </jaxrs:server>
 

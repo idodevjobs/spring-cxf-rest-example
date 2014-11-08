@@ -4,7 +4,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/spring-cxf-rest-example.xml</param-value>
+        <param-value>classpath:spring-cxf-rest-example.xml</param-value>
     </context-param>
 
     <listener>

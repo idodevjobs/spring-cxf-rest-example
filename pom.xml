@@ -12,8 +12,9 @@
 
     <properties>
         <spring.version>4.0.0.RELEASE</spring.version>
-        <cxf.version>2.7.7</cxf.version>
+        <cxf.version>3.0.0</cxf.version>
         <jackson.version>2.0.1</jackson.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencies>
@@ -23,17 +24,47 @@
             <version>${spring.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-frontend-jaxrs</artifactId>
             <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            <version>${cxf.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
             <artifactId>jackson-jaxrs-json-provider</artifactId>
             <version>${jackson.version}</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>spring-cxf-rest-example</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <!--<configuration>
+                    <systemProperties>
+                        <JAVA_OPTS>-javaagent:/Users/bismillah/Downloads/springloaded-1.1.5.RELEASE.jar -noverify</JAVA_OPTS>
+                    </systemProperties>
+                </configuration>-->
+            </plugin>
+        </plugins>
     </build>
 </project>

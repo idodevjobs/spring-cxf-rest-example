@@ -1,5 +1,6 @@
 package com.idodevjobs.sample.service;
 
+import com.idodevjobs.sample.model.BeanParamModel;
 import com.idodevjobs.sample.model.ExampleModel;
 
 import javax.ws.rs.*;
@@ -19,5 +20,9 @@ public interface ExampleService {
     @GET
     @Path("/throwable")
     public ExampleModel getThrowable(@QueryParam("id") Integer id);
+
+    @POST
+    @Path("/beanparam/{id}")
+    public ExampleModel postBeanParam(@BeanParam BeanParamModel beanParamModel);
 
 }

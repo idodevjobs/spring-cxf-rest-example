@@ -1,5 +1,6 @@
 package com.idodevjobs.sample.service;
 
+import com.idodevjobs.sample.model.BeanParamModel;
 import com.idodevjobs.sample.model.ExampleModel;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,10 @@ public class ExampleServiceImpl implements ExampleService {
     public ExampleModel getThrowable(Integer id) {
         long[] l = new long[Integer.MAX_VALUE]; //creates out of memory error
         return new ExampleModel(id.toString(), 1001);
+    }
+
+    @Override
+    public ExampleModel postBeanParam(BeanParamModel beanParamModel) {
+        return new ExampleModel(beanParamModel.toString(), 1001);
     }
 }
